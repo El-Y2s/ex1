@@ -533,4 +533,6 @@ void hackEnrollment(EnrollmentSystem sys, FILE* out){
         fprintf(out, "Cannot satisfy constraints for %ld", dissatisfiedHackerID);
     }
     // print result
+    printOut(sys, out);
+    return;
 }
