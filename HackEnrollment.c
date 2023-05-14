@@ -1,5 +1,6 @@
-#include "HackEnrollment.h"
 #include "IsraeliQueue.h"
+#include "HackEnrollment.h"
+
 
 // STRUCTS
 typedef struct Node
@@ -55,7 +56,7 @@ typedef struct EnrollmentSystem_t
     // queues nodes (pointer to every Israeli Queue)
 } EnrollmentSystem_t;
 
-typedef struct EnrollmentSystem_t *EnrollmentSystem;
+typedef struct EnrollmentSystem_t* EnrollmentSystem;
 
 
 typedef enum { STUDENTS_Q, COURSES_Q, DEFAULT_Q } QueueType;
@@ -431,7 +432,7 @@ Course* createCourse(FILE *courses){
         return NULL;
     }
 
-    FriendshipFunction* fArr = {NULL};
+    FriendshipFunction fArr[] = { NULL };
     course_ptr->courseQueue = IsraeliQueueCreate(fArr, NULL, FRIENDHIP_THRESHLOD, RIVALRY_THRESHLOD);
     if (!(course_ptr->courseQueue)){ // alloc error
         destroyCourse(course_ptr);
